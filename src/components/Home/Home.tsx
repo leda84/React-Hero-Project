@@ -2,6 +2,7 @@ import React from 'react';
 import {makeStyles} from '@mui/styles';
 import { Button } from '@mui/material';
 import hero_image from '../../assets/images/marvel-heroes.jpg';
+import {Link} from 'react-router-dom'
 
 interface Props {
     title: string;
@@ -66,13 +67,13 @@ export const Home = (props:Props) => {
                     </h1>
                     <ul className={`${classes.navigation} ${classes.logo_navigation}`}>
                         <li>
-                            <a href="" className={classes.nav_a}>Home</a>
+                            <Link to="/" className={classes.nav_a}>Home</Link>
                         </li>
                         <li>
-                            <a href="" className={classes.nav_a}>DashBoard</a>
+                            <Link to="/dashboard" className={classes.nav_a}>DashBoard</Link>
                         </li>
                         <li>
-                            <a href="" className={classes.nav_a}>Sign In</a>
+                            <Link to="/signin" className={classes.nav_a}>Sign In</Link>
                         </li>
                     </ul>
                 </div>
