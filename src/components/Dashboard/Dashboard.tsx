@@ -111,6 +111,16 @@ export const Dashboard = withRouter((props:DashProps) => {
     const handleDrawerClose = () => {
         setOpen(false);
     }
+    
+    const [dialogOpen, setDialogOpen] = useState(false);
+    //Handle Dialog open/close
+    const handleDialogClickOpen = () =>{
+        setDialogOpen(true);
+    }
+    const handleDialogClickClose = () => {
+        setDialogOpen(false);
+    }
+
     const itemList = [
         {
             text: 'Home',
@@ -138,7 +148,19 @@ export const Dashboard = withRouter((props:DashProps) => {
                     <Typography variant='h6' noWrap>
                         Dashboard
                     </Typography>
-                    <Button className={classes.toolbar_button} style={{backgroundColor:'whitesmoke', marginLeft:'auto'}}>Create New Hero</Button>
+                    <Button className={classes.toolbar_button} onClick={handleDialogClickOpen} style={{backgroundColor:'whitesmoke', marginLeft:'auto'}}>Create New Hero</Button>
+                    {/* Dialog Pop Up Begin */}
+                    <Dialog open={dialogOpen} onClose={handleDialogClickClose}
+                        aria-labelledby='form-dialog-title'>
+                        <DialogTitle id="form-dialog-title">Add New Hero</DialogTitle>
+                        <DialogContent>
+                            <DialogContentText>Fill Out Form to Add a Hero</DialogContentText>  
+                            <HeroForm />  
+                        </DialogContent>    
+                        <DialogActions>
+                            <Button onClick={handleDialogClickClose}>Cancel</Button>
+                        </DialogActions>
+                    </Dialog>
                 </Toolbar>
             </AppBar>
             <MUIDrawer

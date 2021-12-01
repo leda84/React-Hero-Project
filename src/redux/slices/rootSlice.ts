@@ -15,10 +15,19 @@ const rootSlice = createSlice({
         },
         chooseAlias:(state,action) => {
             state.alias = action.payload
+        },
+        chooseSuperPower:(state,action) => {
+            state.super_power = action.payload
+        },
+        chooseDescription:(state,action) => {
+            state.description = action.payload
+        },
+        chooseComicsAppearedIn:(state,action) => {
+            state.comics_appeared_in = action.payload
         }
     }
 })
 
 export const reducer = rootSlice.reducer;
 
-export const {chooseName, chooseAlias} = rootSlice.actions
+export const {chooseName, chooseAlias, chooseSuperPower, chooseDescription, chooseComicsAppearedIn} = rootSlice.actions
