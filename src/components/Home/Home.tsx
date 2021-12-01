@@ -93,7 +93,7 @@ export const Home = (props:Props) => {
                 <div className={classes.main_text}>
                     <h1>{ props.title }</h1>
                     <p>Heroes are Cool!</p>
-                    <Button color='primary' variant='contained'>Click Me!</Button>
+                    {/* <Button color='primary' variant='contained'>Click Me!</Button> */}
                 </div>
 
             </main>
